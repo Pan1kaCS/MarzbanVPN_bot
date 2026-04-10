@@ -4,7 +4,8 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes
 from database import get_db, User, Payment, Mailing
-from datetime import datetime
+from sqlalchemy import func
+from datetime import datetime, timedelta
 import config
 import logging
 

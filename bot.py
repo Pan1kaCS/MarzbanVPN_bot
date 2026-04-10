@@ -4,7 +4,7 @@
 import asyncio
 import logging
 from datetime import datetime, timedelta
-from telegram import Update
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
     Application, CommandHandler, CallbackQueryHandler, MessageHandler, 
     ContextTypes, filters, ChatMemberHandler
@@ -112,7 +112,7 @@ def main():
     application.add_handler(CommandHandler("admin", admin_menu))
     application.add_handler(CommandHandler("stats", admin_stats))
     application.add_handler(CallbackQueryHandler(button_handler))
-    application.add_handler(CallbackQueryHandler(lambda u,c: check_payment(u, u.data.split('_',1)[1]) if u.data.startswith('check_') else None, pattern='^check_'))
+application.add_handler(CallbackQueryHandler(lambda u,c: asyncio.create_task(check_payment(u.callback_query, u.data.split('_',1)[1])) if u.callback_query.data.startswith('check_') else None, pattern='^check_'))
     
     # Error
     application.add_error_handler(error_handler)

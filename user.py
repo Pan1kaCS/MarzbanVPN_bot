@@ -88,6 +88,8 @@ async def buy_plan(query, plan: str):
         reply_markup=reply_markup
     )
 
+import base64
+
 async def show_profile(query):
     db = next(get_db())
     user = get_user(db, query.from_user.id)
