@@ -61,7 +61,7 @@ sudo apt install python3 python3-pip python3-venv git screen ufw -y
 
 # 2. Клонировать репозиторий (замените URL на ваш GitHub)
 git clone https://github.com/Pan1kaCS/MarzbanVPN_bot.git
-cd marzban-vpn-bot
+cd MarzbanVPN_bot
 
 # 3. Virtualenv
 python3 -m venv venv
