@@ -12,6 +12,7 @@ load_dotenv()
 # Основные настройки
 BOT_TOKEN = os.getenv('BOT_TOKEN')
 ADMIN_ID = int(os.getenv('ADMIN_ID', 0))
+BOT_USERNAME = os.getenv('BOT_USERNAME', 'Pan1kaVPN_bot')
 DB_PATH = os.getenv('DB_PATH', 'bot.db')
 
 # Marzban
